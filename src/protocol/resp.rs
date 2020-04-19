@@ -26,13 +26,12 @@ where
 {
     let mut result = Vec::new();
     for _ in 0..n {
-        if let Ok((next_item, next_input)) = f(input) {
-            input = next_input;
-            result.push(next_item)
-        } else {
-            return Err(Error {
-                what: input.to_owned(),
-            });
+        match f(input) {
+            Ok((next_item, next_input)) => {
+                input = next_input;
+                result.push(next_item)
+            }
+            Err(x) => return Err(x),
         }
     }
     Ok((result, input))
