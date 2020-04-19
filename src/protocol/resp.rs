@@ -215,7 +215,7 @@ mod test {
             })
         );
         // nested array
-        let v3 = "*2\r\n*1\r\n:5\r\n*3\r\n:4\r\n$3\r\nfoo\r\n$3\r\nbaar\r\n";
+        let v3 = "*2\r\n*1\r\n:5\r\n*3\r\n:4\r\n$3\r\nfoo\r\n$3\r\nbar\r\n";
         let data3 = vec![
             Value::Array(vec![Value::Number(5)]),
             Value::Array(vec![
